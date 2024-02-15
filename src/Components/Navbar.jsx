@@ -14,7 +14,7 @@ function Navbar() {
                     <button className='capitalize pr-4'>Login</button>
                 </Link>
                 <Link to='/signup'>
-                    <button className='capitalize bg-red-600 px-5 py-1 rounded'>Login</button>
+                    <button className='capitalize bg-red-600 px-5 py-1 rounded'>Signup</button>
                 </Link>
             </div>
         </div>
