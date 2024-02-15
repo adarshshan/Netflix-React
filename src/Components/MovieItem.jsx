@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { createImageUrl } from '../services/movieServices';
+import { createImageUrl } from '../../services/movieServices';
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 

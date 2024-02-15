@@ -30,7 +30,7 @@ export function AuthContextProvider({ children }) {
     function logOut() {
         signOut(auth);
     }
-    return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{user,signUp,logIn,logOut}}>{children}</AuthContext.Provider>;
 }
 
 export function UserAuth() {
