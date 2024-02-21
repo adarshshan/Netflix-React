@@ -11,8 +11,16 @@ function useProfile() {
 
     return [movies, setMovies];
 }
+function useSignUp() {
+    const [rememberLogin, setRememberLogin] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    return [rememberLogin, setRememberLogin, email, setEmail, password, setPassword]
+}
 
 export {
     useLogin,
-    useProfile
+    useProfile,
+    useSignUp
 }

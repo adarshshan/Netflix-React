@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from '../../context/AuthContext';
+import { useSignUp } from '../Hooks/ourHooks';
 
 function Signup() {
-  const [rememberLogin, setRememberLogin] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [rememberLogin, setRememberLogin] = useState(false);
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  const [rememberLogin, setRememberLogin, email, setEmail, password, setPassword] = useSignUp();
 
   const { user, signUp } = UserAuth()
   const navigate = useNavigate();
