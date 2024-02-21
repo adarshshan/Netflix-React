@@ -6,7 +6,13 @@ function useLogin() {
 
     return [rememberLogin, setRememberLogin, email, setEmail, password, setPassword];
 }
+function useProfile() {
+    const [movies, setMovies] = useState([]);
+
+    return [movies, setMovies];
+}
 
 export {
-    useLogin
+    useLogin,
+    useProfile
 }

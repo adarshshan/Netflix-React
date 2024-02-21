@@ -5,16 +5,23 @@ import { UserAuth } from '../../context/AuthContext';
 import { db } from '../../services/firebase';
 import { createImageUrl } from '../../services/movieServices';
 import { arrayRemove, doc, onSnapshot, updateDoc } from 'firebase/firestore';
+// import { useProfile } from '../Hooks/ourHooks';
 
 function Profile() {
   const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useProfile();
   const { user } = UserAuth();
 
   useEffect(() => {
-    if (user) {
-      onSnapshot(doc(db, "users", `${user.email}`), (doc) => {
-        if (doc.data()) setMovies(doc.data().favShows);
-      })
+    try {
+      if (user) {
+        onSnapshot(doc(db, "users", `${user.email}`), (doc) => {
+          if (doc.data()) setMovies(doc.data().favShows);
+        })
+      }
+    } catch (error) {
+      console.log(`error is here in profile.jsx`);
+      console.log(error)
     }
   }, [user?.email]);
 

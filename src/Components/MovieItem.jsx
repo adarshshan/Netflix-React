@@ -12,15 +12,19 @@ function MovieItem({ movie }) {
     const { title, backdrop_path, poster_path } = movie;
 
     const markFavShow = async () => {
-        const userEmail = user?.email;
-        if (userEmail) {
-            const userDoc = doc(db, 'users', userEmail);
-            setLike(!like);
-            await updateDoc(userDoc, {
-                favShows: arrayUnion({ ...movie }),
-            });
-        } else {
-            alert('login to save a movie');
+        try {
+            const userEmail = user?.email;
+            if (userEmail) {
+                const userDoc = doc(db, 'users', userEmail);
+                setLike(!like);
+                await updateDoc(userDoc, {
+                    favShows: arrayUnion({ ...movie }),
+                });
+            } else {
+                alert('login to save a movie');
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
     return (

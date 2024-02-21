@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../../context/AuthContext';
 import { useLogin } from '../Hooks/ourHooks';
@@ -6,11 +6,8 @@ import { useLogin } from '../Hooks/ourHooks';
 
 function Login() {
   const [rememberLogin, setRememberLogin, email, setEmail, password, setPassword] = useLogin();
-  // const [rememberLogin, setRememberLogin] = useState(false);
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
 
-  const { user, logIn } = UserAuth()
+  const { logIn } = UserAuth()
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
