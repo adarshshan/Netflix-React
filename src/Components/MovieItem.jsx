@@ -10,7 +10,6 @@ function MovieItem({ movie }) {
     const [like, setLike] = useState(false);
     const { user } = UserAuth();
     const { title, backdrop_path, poster_path } = movie;
-
     const markFavShow = async () => {
         try {
             const userEmail = user?.email;

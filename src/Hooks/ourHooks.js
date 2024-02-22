@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useDebugValue, useState } from "react";
 function useLogin() {
     const [rememberLogin, setRememberLogin] = useState(false);
     const [email, setEmail] = useState('');
@@ -8,7 +8,7 @@ function useLogin() {
 }
 function useProfile() {
     const [movies, setMovies] = useState([]);
-
+    useDebugValue('removed movie' + movies);
     return [movies, setMovies];
 }
 function useSignUp() {
