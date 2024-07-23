@@ -101,8 +101,6 @@ function Profile() {
             onClick={() => slide(500)}
             className='bg-white rounded-full absolute right-2 opacity-80 text-gray-700 z-10 hidden group-hover:block cursor-pointer' size={40} />
         </div>
-
-
       </div>
     </>
   )

@@ -22,14 +22,19 @@ export function AuthContextProvider({ children }) {
         }
     }, [])
 
-    function signUp(email, password) {
-        createUserWithEmailAndPassword(auth, email, password);
-        setDoc(doc(db, "users", email), {
-            favShows: [],
-        })
+    async function signUp(email, password) {
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            setDoc(doc(db, "users", email), {
+                favShows: [],
+            })
+        } catch (error) {
+            console.log('the error is here');
+            console.log(error);
+        }
     }
-    function logIn(email, password) {
-        signInWithEmailAndPassword(auth, email, password);
+    async function logIn(email, password) {
+        await signInWithEmailAndPassword(auth, email, password);
     }
     function logOut() {
         signOut(auth);
