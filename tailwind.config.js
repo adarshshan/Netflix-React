@@ -1,3 +1,5 @@
+import tailwindScrollbarHide from 'tailwind-scrollbar-hide';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,13 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        'nsans-light':['Nsans-Light'],
-        'nsans-medium':['Nsans-Medium'],
-        'nsans-bold':['Nsans-Bold'],
-        'nsans-regular':['Nsans-Regular']
-      }
+      fontFamily: {
+        'nsans-light': ['Nsans-Light'],
+        'nsans-medium': ['Nsans-Medium'],
+        'nsans-bold': ['Nsans-Bold'],
+        'nsans-regular': ['Nsans-Regular'],
+      },
     },
   },
-  plugins: [require('tailwind-scrollbar-hide')],
-}
+  plugins: [tailwindScrollbarHide],
+};
